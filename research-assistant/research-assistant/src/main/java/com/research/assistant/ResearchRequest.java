@@ -1,22 +1,27 @@
 package com.research.assistant;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 public class ResearchRequest {
-    private String operation;
+
+    @JsonAlias({"content", "text"})
     private String content;
 
-    public String getOperation() {
-        return operation;
-    }
+    @JsonAlias({"operation", "task"})
+    private String operation;
 
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
+    private String targetLanguage;
+    private String summaryStyle;
 
-    public String getContent() {
-        return content;
-    }
+    public String getContent() { return content; }
+    public void setContent(String content) { this.content = content; }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+    public String getOperation() { return operation; }
+    public void setOperation(String operation) { this.operation = operation; }
+
+    public String getTargetLanguage() { return targetLanguage; }
+    public void setTargetLanguage(String targetLanguage) { this.targetLanguage = targetLanguage; }
+
+    public String getSummaryStyle() { return summaryStyle; }
+    public void setSummaryStyle(String summaryStyle) { this.summaryStyle = summaryStyle; }
 }
